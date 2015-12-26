@@ -1,0 +1,1 @@
+!function(){var l=angular.module("site-products",[]);l.directive("albumGallery",function(){return{restrict:"E",templateUrl:"album-gallery.html"}})}();

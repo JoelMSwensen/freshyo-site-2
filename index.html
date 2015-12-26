@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" ng-app="freshYoApp">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh YO!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script type="text/javascript" src="js/album-controller.js"></script>
+    <script type="text/javascript" src="js/murch-controller.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-custom navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <!-- <span class="sr-only">Toggle navigation</span> -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand main-logo" href="#">Project name</a>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#discography">Discography</a>
+                </li>
+                <li><a href="#murch">Murch</a>
+                </li>
+                <li><a href="#contact">Contact</a>
+                </li>
+                <li><a href="#contact">About</a>
+                </li>
+                <li><a href="#contact">Booking</a>
+                </li>
+                <li>
+                  Search: <input id="text-search" ng-model="query" class="text-right">
+                </li>
+            </ul>
+        </div>
+
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<section class="container gallery" id="body-after-nav">
+
+
+  <div id="discography" class="row">
+
+      <div class="col-xs-12">
+          <div class="page-header">
+              <h1 class="text-center">Discography</h1>
+          </div>
+      </div>
+  </div>
+  <br>
+  <!-- <audio controls>
+    <source ng-src="{{album.cast}}" type="audio/mp3">
+  </audio> -->
+
+<aside ng-controller="AlbumListCtrl">
+
+  <div class="container gallery">
+    <div class="row">
+      <div class=" col-lg-2 col-md-3 col-sm-4 col-xs-12 thumb" ng-repeat="album in albums | filter:query">
+
+        <div id="album-container">
+          <a href="{{album.url}}" class="thumbnail">
+            <img class="img-responsive" ng-src="{{album.image}}">
+            <p><b>{{album.name}}</b>
+            <br>by {{ album.artist}}</p>
+
+
+            <!-- <br><i>{{album.description}}</i></p> -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</aside>
+<div class="row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1 class="text-center">Murch</h1>
+                </div>
+            </div>
+          </div>
+
+<aside ng-controller="MurchListCtrl">
+
+  <div id="murch" class="container murch">
+    <div class="row">
+      <div class=" col-lg-2 col-md-3 col-sm-4 col-xs-12 thumb" ng-repeat="item in items">
+
+        <div id="murch-container">
+          <a href="{{item.url}}" class="thumbnail">
+            <img class="img-responsive" ng-src="{{item.image}}">
+            <p><b>{{item.name}}</b>
+            <br>{{item.artist}}
+            <br><small><i style="color:black">{{item.type}}</i></small></p>
+            <p><b>{{item.price | currency:"&euro;"}}</b></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</aside>
+</section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+</body>
+
+</html>
