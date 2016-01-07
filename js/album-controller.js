@@ -274,5 +274,7 @@ freshYoApp.controller('AlbumListCtrl', function($scope) {
       'cast': 'http://joelswensen.com/For-Simone/I%20Forgot%20the%20Reasons.mp3'
     }
   ];
+
+  // $scope.orderProp = 'name';
 });
 })();

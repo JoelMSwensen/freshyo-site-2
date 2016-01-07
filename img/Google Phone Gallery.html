@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:8000/app/ -->
+<html lang="en" ng-app="phonecatApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="./Google Phone Gallery_files/bootstrap.css">
+  <link rel="stylesheet" href="./Google Phone Gallery_files/app.css">
+  <script src="./Google Phone Gallery_files/angular.js"></script>
+  <script src="./Google Phone Gallery_files/controllers.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl" class="ng-scope">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Sidebar content-->
+
+        Search: <input ng-model="query" class="ng-pristine ng-untouched ng-valid">
+        Sort by:
+        <select ng-model="orderProp" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+
+      </div>
+      <div class="col-md-10">
+        <!--Body content-->
+
+        <ul class="phones">
+          <!-- ngRepeat: phone in phones | filter:query | orderBy:orderProp --><li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="ng-scope">
+            <span class="ng-binding">Nexus S</span>
+            <p class="ng-binding">Fast just got faster with Nexus S.</p>
+          </li><!-- end ngRepeat: phone in phones | filter:query | orderBy:orderProp --><li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="ng-scope">
+            <span class="ng-binding">Motorola XOOM™ with Wi-Fi</span>
+            <p class="ng-binding">The Next, Next Generation tablet.</p>
+          </li><!-- end ngRepeat: phone in phones | filter:query | orderBy:orderProp --><li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="ng-scope">
+            <span class="ng-binding">MOTOROLA XOOM™</span>
+            <p class="ng-binding">The Next, Next Generation tablet.</p>
+          </li><!-- end ngRepeat: phone in phones | filter:query | orderBy:orderProp -->
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>
